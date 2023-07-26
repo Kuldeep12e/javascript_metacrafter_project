@@ -1,0 +1,40 @@
+// Variable to store NFT metadata
+let NFts = [];
+
+// Function to store NFT metadata
+function  mintNFT (id, name, description, owner) {
+  let nftData = {
+    id: id,
+    name: name,
+    description: description,
+    owner: owner,
+  };
+  NFts.push(nftData);
+}
+
+// Function to print NFT metadata
+function listNFTs () {
+  if (NFts.length === 0) {
+    console.log("No NFTs found.");
+  } else {
+    console.log("NFT Metadata:");
+    for (let i = 0; i < NFts.length; i++) {
+      let nft = NFts[i];
+      console.log(`NFT ID: ${nft.id}`);
+      console.log(`NFT Name: ${nft.name}`);
+      console.log(`Description: ${nft.description}`);
+      console.log(`Owner: ${nft.owner}`);
+      console.log("--------------------");
+    }
+  }
+}
+function getTotalSupply() {
+  console.log(NFts.length);
+}
+
+// Example usage:
+mintNFT(1, "NFT 1", "This is the first NFT", "kuldeep");
+mintNFT (2, "NFT 2", "This is the second NFT", "Abhishek");
+
+listNFTs ();
+getTotalSupply();
